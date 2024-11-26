@@ -34,7 +34,10 @@ class CentroDeportivo{
      +calcularConsumoEnergetico(): double
      +calcularConsumoAgua(): double
 }
-
+class Ayuntamiento{
+     +calcularConsumoEnergetico(): double
+     +calcularConsumoAgua(): double
+}
 abstract class Edificio{
     -id: long
     -tipo: String
@@ -45,6 +48,7 @@ abstract class Edificio{
 }
 
 class Estacionamiento extends Edificio
+class Ayuntamiento extends Edificio
 class Teatro extends Edificio
 class CentroSalud extends Edificio
 class CentroDeportivo extends Edificio
