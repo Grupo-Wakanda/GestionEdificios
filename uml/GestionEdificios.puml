@@ -1,0 +1,75 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+class Estacionamiento{
+    +calcularConsumoEnergetico(): double
+    +calcularConsumoAgua(): double
+}
+class Escuela{
+     +calcularConsumoEnergetico(): double
+     +calcularConsumoAgua(): double
+}
+
+class PlantaTratamientoAgua{
+     +calcularConsumoEnergetico(): double
+     +calcularConsumoAgua(): double
+}
+class CentroSalud{
+     +calcularConsumoEnergetico(): double
+     +calcularConsumoAgua(): double
+}
+class Museo{
+     +calcularConsumoEnergetico(): double
+     +calcularConsumoAgua(): double
+}
+class Teatro{
+     +calcularConsumoEnergetico(): double
+     +calcularConsumoAgua(): double
+}
+class CentroCultural{
+     +calcularConsumoEnergetico(): double
+     +calcularConsumoAgua(): double
+}
+class CentroDeportivo{
+     +calcularConsumoEnergetico(): double
+     +calcularConsumoAgua(): double
+}
+
+abstract class Edificio{
+    -id: long
+    -tipo: String
+    -consumoEnergetico: double
+    -consumoAgua: double
+    +calcularConsumoEnergetico(): double
+    +calcularConsumoAgua(): double
+}
+
+class Estacionamiento extends Edificio
+class Teatro extends Edificio
+class CentroSalud extends Edificio
+class CentroDeportivo extends Edificio
+class CentroCultural extends Edificio
+class Escuela extends Edificio
+class Museo extends Edificio
+class PlantaTratamientoAgua extends Edificio
+
+class EdificioService{
+    +crearEdificio()
+    +agregarEdificio()
+    +listarEdificio(): List<Edificio>
+}
+class EdificioRepository{
+    +listarEdificio(): List<Edificio>
+    +agregarEdificio()
+}
+
+class EdificioController{}
+class EdificioFabrica{
+    +crearEdificio()
+}
+
+EdificioRepository <-- EdificioService: obtiene o almacena datos
+EdificioService <-- EdificioController: llama metodos
+EdificioService --> EdificioFabrica: crea objetos
+EdificioFabrica --> Edificio: crea objetos
+@enduml
