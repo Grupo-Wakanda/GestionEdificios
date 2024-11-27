@@ -73,7 +73,7 @@ class EdificioFabrica{
 }
 
 EdificioRepository <-- EdificioService: obtiene o almacena datos
-EdificioService <-- EdificioController: llama metodos
+EdificioRepository <-- EdificioController: llama metodos
 EdificioService --> EdificioFabrica: crea objetos
 EdificioFabrica --> Edificio: crea objetos
 @enduml

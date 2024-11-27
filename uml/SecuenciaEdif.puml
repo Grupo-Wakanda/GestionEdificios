@@ -2,13 +2,11 @@
 'https://plantuml.com/sequence-diagram
 
 autonumber
-actor Usuario
 participant "EdificioService" as ES
 participant "EdificioController" as EC
 participant "EdificioRepository" as ER
 participant "EdificioFabrica" as EF
 
-Usuario -> "ES" : crearEdificio()
 activate ES
 ES -> "EF" : crearEdificio()
 activate EF
@@ -20,6 +18,5 @@ EF --> ES : edificio creado
 deactivate EF
 ES -> ER : agregarEdificio()
 ER -> EC: "edificio"
-EC -> Usuario: "edificio" creado
 deactivate ES
 @enduml
